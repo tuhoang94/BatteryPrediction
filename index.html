@@ -1,204 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>d3 Scatter Plot</title>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Battery Failure Prediction</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.1.2/dimple.latest.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-        body {
-            font: 15px sans-serif;
-        }
-        
-        section {
-          padding: 40px 0;
-        }
-        section .container {
-          padding: 20px 0;
-        }
 
 
-        .axis path,
-        .axis line {
-            fill: none;
-            stroke: #000;
-            shape-rendering: crispEdges;
-        }
+</head>
 
-        .dot {
-            stroke: none;
-        }
-        .tooltip {
-            position: absolute;
-            font-size: 12px;
-            width:  auto;
-            height: auto;
-            pointer-events: none;
-            background-color: white;
-        }
-         </style>
-    </head>
-    <body>
+<body id="page-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="logo.png" height="80" width="60"/></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Prediction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#visual">Visualization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#conclusion">Product</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+<div class="parallax"></div>
+
+  <!-- <img src="headerimage.jpg" class="img-fluid" alt="Responsive image"> -->
+          
+
+  <header>
+    <div class="container text-center" style="color:#262261;">
+      <h1>CROSSYN</h1>
+      <p class="lead"><em>The advances analytics platform for the automotive industry</em></p><hr>
+    </div>
+  </header>
+
+  <section id="about" class="bg-light">
+    <div class="container">
+    <h1 style="color:#262261;">Crossyn</h1>
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+        <p><hr>
+          <p class="lead"><em>'As a driver you are connected to the car, you have control. Driving through the mountain and the valley you are free to go. 
+          Crossyn connects you with your data, Crossyn gives you control. At Crossyn we go for innovation and improvement, at Crossyn we connect you, as you want. '</em></p><hr>
+          <h4>Crossyn</h4>
+          <p class="lead">
+          Crossyn collects, analyzes and enriches data from vehicles and the behavior of drivers. We believe that bundling this data is the way to act in a future-proof manner. The bundling offers valuable insights that lead to intelligent solutions. At Crossyn we respond to the needs of the driver and the needs of the business customers. We bring the customer closer to the rider.
+          </p>
+                    
+        </div>
+                <div class="col-lg-6 mx-auto">
+          <h4>Battery Case</h4>
+          <p class="lead">Our assignment was to predict whether a car would start or not, with this question came some variables like: the nature (temperature), Ambient temperature, battery power output capacity, power requirements of the vehicle, battery material, state of charge. With this prediction Crossyn could alert you the night before the starting failure about the problem and with this they could automatically send someone by to help you get on your way. </p>
+        </div>
+      </div>
+    </div>
     
-      <section id="about">
+  </section>
+  
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-12 mx-auto">
+<div class="parallax2"></div>
+</div>
+</div>
+</div>
+
+
+  <section id="services">
+    <div class="container">
+    <h1 style="color:#262261;">Prediction</h1>
+      <div class="row">
+        <div class="col-lg-12 mx-auto">
+          <h4>SVM</h4>
+          <p class="lead">One of the most important battery parameters is the battery state-of-charge (SOC). 
+          Knowing the amount of energy left in a battery compared with the energy it had when it was full, 
+          gives the user an indication of how much longer a battery will continue to perform before it needs recharging.
+          SVM techniques (SVMs) have developed greatly in recent years, giving rise to a new kind of learning machines 
+          that use the central concept of SVMs, namely, kernels, for a number of learning tasks. 
+          In this research study, SVM  is used as automated learning tool to successfully predict the SOC of a high capacity  battery cell 
+          as a function of cell voltage, cell current and cell temperature. This will predict if the car will start or not. 
+         </p>
+        </div>
+      </div>
+      </div>
+  </section>
+
+  <section id="visual" class="bg-light">
+    <div class="container">
+      <h1 style="color:#262261;">Visualization</h1>
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <h4>Training Dataset</h4>
+          <p>Training Dataset: The sample of data used to fit the model.</p>
+          <p class="lead"> The actual dataset that we use to train the model. The model sees and learns from this data.
+          </p>
+
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <h4>Test Dataset</h4>
+          <p>Test Dataset: The sample of data used to provide an unbiased evaluation of a final model fit on the training dataset.</p>
+          <p class="lead"> The Test dataset provides the gold standard used to evaluate the model. It is only used once a model is completely trained(using the train and validation sets). 
+          The test set is generally what is used to evaluate competing models.</p>
+          
+
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-lg-6 mx-auto">
+      <div id="tr-container"></div>
+      </div>
+      <div class="col-lg-6 mx-auto">
+      <div id="ev-container"></div>
+      </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <p id="chartContainer"></p>
+        </div>
+        <div class="col-lg-4 mx-auto">
+          <h4>Happiness and GDP</h4>
+          <p class="lead"> The world is divided in regions and it countries. But which country is the happiest? And is this in correlation
+            with how much capital it has?
+          </p>
+          <p> In this plot are the happiness and Economy (GDP per Capita) shown for every country. </p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+
+  <section id="conclusion" class="bg-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 mx-auto">
-          <h2>About this page</h2>
-          <p class="lead">Crossyn</p>
+          <h1 style="color:#262261;">Battery prediction</h1>
+          <p> The most happiest country is
+            <a href="https://www.google.nl/search?q=switzerland&ie=utf-8&oe=utf-8&client=firefox-b-ab&gfe_rd=cr&dcr=0&ei=uMA6WozuDYq3tgfc9bG4AQ">Switzerland</a>. As shown in the visualization above, its not one factor which determines how happy the country
+            is but multiple factors. does'nt have a factor which they stand out but most of it are high which makes Switzerland
+            Top 1 Happiest Country of the WORLD!</p>
+          <p>As Helliwell et al (2013, 2015, 2016) emphasize, happiness is the product of many facets of society. Income per
+            capita matters, as economists emphasize, but so too do social conditions, work conditions, health, pollution,
+            and values (e.g. generosity). The libertarian argument that economic freedom should be championed above all other
+            values decisively fails the happiness test: there is no evidence that economic freedom per se is a major direct
+            contributor of human well-being above and beyond what it might contribute towards per capita income and employment.
+            Individual freedom matters for happiness, but among many objectives and values, not to the exclusion of those
+            other considerations. Sustainable development and related holistic concepts (such as Pope Francis’s integral
+            human development) are a better overarching guide to human wellbeing than the single-minded pursuit of income,
+            or economic freedom, or other one-dimensional objective. </p>
         </div>
       </div>
     </div>
   </section>
-    
-    <section id="set">
-        <div class="container">
-        <div class="row ">
-            <div class="col-lg-6 mx-auto">
-                <h2>Evaluation Set</h2>
-                <div id="ev-container"></div>
-            </div>
-            <div class="col-lg-6 mx-auto">
-                <h2>Train Set</h2>
-                <div id="tr-container"></div>
+
+
+  <section id="about" class="crossyn text-white text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <blockquote class="blockquote blockquote-reversed">
+            <p class="mb-0">
+              <em>“Without big data analytics, companies are blind and deaf, wandering out onto the web like deer on a freeway.”</em>
+            </p>
+            <footer class="blockquote-footer">Geoffrey Moore</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-light">
+    <!-- <div class="container"> -->
+      <!-- <p class="m-0 text-center text-white">Copyright &copy; 2017 by Tu Hoang</p> -->
+    <!-- </div> -->
+    <hr style="margin-top:50px; margin-bottom:50px;width:100%;height:2px;background-color:#262161;">
+    <div class="container">
+    <div class="row">
+        <div class="col">
+                <div class="text-center center-block">
+
+            <img src="https://fontys.nl/upload_mm/e/1/6/115115_fullimage_fon525_00.png"/>
             </div>
         </div>
+        <div class="col">
+                <div class="text-center center-block">
+
+                    <img src="logo.png" height="180" width="140"/>
+</div>
         </div>
-    </section>
+         
+         <div class="col">
+         
+             
+        <div class="text-center center-block">
+            <p class=""> Social Media </p>
+            <br />
+                <a href="https://www.facebook.com/crossyn/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+	            <a href="https://twitter.com/crossynauto"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+	            <a href="https://www.linkedin.com/company/10620673/"><i id="social-gp" class="fa fa-linkedin-square fa-3x social"></i></a>
+	            <a href="info@crossyn.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+</div>
     
-    <section id="graphs">
-        <div class="container">
-            <div class="row ">
-                <div id="plot"></div>
-            </div>
-        </div> 
-    </section>
+      
+        </div>
+    </div>
+    <!-- <hr> -->
+        <!-- <div class="text-center center-block"> -->
+            <!-- <p class="txt-railway text-white">- Bootsnipp.com -</p> -->
+            <!-- <br /> -->
+                <!-- <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a> -->
+	            <!-- <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a> -->
+	            <!-- <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a> -->
+	            <!-- <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a> -->
+<!-- </div> -->
+    <!-- <hr> -->
+</div><hr>
+  </footer>
+  
+  
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+  
+</body>
 
 
+<!-- <script src="graph.js"></script> -->
 
-        <!-- Optionally reference your vis JS file here, or define in a script tag -->
-        <!-- <script type="text/javascript" src="js/my-vis.js"></script> -->
-        <script type="text/javascript">
+<script src="set.js"></script>
 
-            d3.csv('./evaluation_set.csv', function loadCallback(error, data) {
-                data.forEach(function(d) { // convert strings to numbers
-                    d.temp = +d.temp;
-                    d.soc = +d.soc;
-                });
-                console.log(data);
-                makeEv(data, "#ev-container");
-            });
-            d3.csv('./train_set.csv', function loadCallback(error, data) {
-                data.forEach(function(d) { // convert strings to numbers
-                    d.temp = +d.temp;
-                    d.soc = +d.soc;
-                });
-                console.log(data);
-                makeEv(data, "#tr-container");
-            });
 
-          var makeEv = function(data, container) {
-              // Common pattern for defining vis size and margins
-              var margin = { top: 20, right: 20, bottom: 30, left: 40 },
-                  width  = 960 - margin.left - margin.right-500,
-                  height = 500 - margin.top - margin.bottom -100;
-
-              // Add the visualization svg canvas to the ev-container <div>
-              var canvas = d3.select(container).append("svg")
-                  .attr("width",  width  + margin.left + margin.right)
-                  .attr("height", height + margin.top  + margin.bottom)
-                .append("g")
-                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-              // Define our scales
-              var colorScale = d3.scale.category10();
-
-              var xScale = d3.scale.linear()
-                  .domain([ d3.min(data, function(d) { return d.soc; }) - 1,
-                            d3.max(data, function(d) { return d.soc; }) + 1 ])
-                  .range([0, width]);
-
-              var yScale = d3.scale.linear()
-                  .domain([ d3.min(data, function(d) { return d.temp; }) - 1,
-                            d3.max(data, function(d) { return d.temp; }) + 1 ])
-                  .range([height, 0]); // flip order because y-axis origin is upper LEFT
-
-              // Define our axes
-              var xAxis = d3.svg.axis()
-                  .scale(xScale)
-                  .orient('bottom');
-
-              var yAxis = d3.svg.axis()
-                  .scale(yScale)
-                  .orient('left');
-
-              // Add x-axis to the canvas
-              canvas.append("g")
-                  .attr("class", "x axis")
-                  .attr("transform", "translate(0," + height + ")") // move axis to the bottom of the canvas
-                  .call(xAxis)
-                .append("text")
-                  .attr("class", "label")
-                  .attr("x", width) // x-offset from the xAxis, move label all the way to the right
-                  .attr("y", -6)    // y-offset from the xAxis, moves text UPWARD!
-                  .style("text-anchor", "end") // right-justify text
-                  .text("State of charge");
-
-              // Add y-axis to the canvas
-              canvas.append("g")
-                  .attr("class", "y axis") // .orient('left') took care of axis positioning for us
-                  .call(yAxis)
-                .append("text")
-                  .attr("class", "label")
-                  .attr("transform", "rotate(-90)") // although axis is rotated, text is not
-                  .attr("y", 15) // y-offset from yAxis, moves text to the RIGHT because it's rotated, and positive y is DOWN
-                  .style("text-anchor", "end")
-                  .text("Temperature");
-
-              // Add the tooltip container to the vis container
-              // it's invisible and its position/contents are defined during mouseover
-              var tooltip = d3.select(container).append("div")
-                  .attr("class", "tooltip")
-                  .style("opacity", 0);
-
-              // tooltip mouseover event handler
-              var tipMouseover = function(d) {
-                  var color = colorScale(d.start);
-                  var html  = d.id + "<br/>" +
-                              "<span style='color:" + color + ";'>Start: " + d.start + "</span><br/>" +
-                              "<b>" + d.soc + "</b> SoC, <b/>" + d.temp + "</b> C";
-
-                  tooltip.html(html)
-                      .style("left", (d3.event.pageX + 15) + "px")
-                      .style("top", (d3.event.pageY - 28) + "px")
-                    .transition()
-                      .duration(200) // ms
-                      .style("opacity", .9) // started as 0!
-
-              };
-              // tooltip mouseout event handler
-              var tipMouseout = function(d) {
-                  tooltip.transition()
-                      .duration(300) // ms
-                      .style("opacity", 0); // don't care about position!
-              };
-
-              // Add data points!
-              canvas.selectAll(".dot")
-                .data(data)
-              .enter().append("circle")
-                .attr("class", "dot")
-                .attr("r", 5.5) // radius size, could map to another data dimension
-                .attr("cx", function(d) { return xScale( d.soc ); })     // x position
-                .attr("cy", function(d) { return yScale( d.temp ); })  // y position
-                .style("fill", function(d) { return colorScale(d.start); })
-                .on("mouseover", tipMouseover)
-                .on("mouseout", tipMouseout);
-          };
-
-        </script>
-    </body>
 </html>
