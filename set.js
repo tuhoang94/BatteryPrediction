@@ -1,19 +1,41 @@
+var svg2 = dimple.newSvg("#chartContainer", 600, 500);
+    d3.csv("data/python-algorithms-accuracy.csv", function (data) {
+      var myChart = new dimple.chart(svg2, data);
+      myChart.setBounds(60, 30, 510, 305);
+      var x = myChart.addCategoryAxis("x", "algorithm");
+      var y = myChart.addMeasureAxis("y", " accuracy");
+      y.tickFormat = ',.3f';
+      myChart.addSeries(null, dimple.plot.bar);
+      myChart.draw();
+      
+      // svg2.append("text")
+   // .attr("x", myChart._xPixels() + myChart._widthPixels() / 2)
+   // .attr("y", myChart._yPixels() -10)
+   // .style("text-anchor", "middle")
+   // .style("font-family", "sans-serif")
+   // .style("font-size", "20px")
+   // .style("font-weight", "bold")
+   // .text("Comparison accuracy algorithms")
+            
+    });
+
 d3.csv('data/evaluation_set.csv', function loadCallback(error, data) {
                 data.forEach(function(d) { // convert strings to numbers
                     d.temp = +d.temp;
                     d.soc = +d.soc;
                 });
                 console.log(data);
-                makeEv(data, "#ev-container");
+               // makeEv(data, "#ev-container");
             });
-            d3.csv('data/train_set.csv', function loadCallback(error, data) {
-                data.forEach(function(d) { // convert strings to numbers
-                    d.temp = +d.temp;
-                    d.soc = +d.soc;
-                });
-                console.log(data);
-                makeEv(data, "#tr-container");
-            });
+d3.csv('data/train_set.csv', function loadCallback(error, data) {
+    data.forEach(function(d) { // convert strings to numbers
+        d.temp = +d.temp;
+        d.soc = +d.soc;
+    });
+    console.log(data);
+   // makeEv(data, "#tr-container");
+});
+
 
           var makeEv = function(data, container) {
               // Common pattern for defining vis size and margins
@@ -75,31 +97,30 @@ d3.csv('data/evaluation_set.csv', function loadCallback(error, data) {
 
               // Add the tooltip container to the vis container
               // it's invisible and its position/contents are defined during mouseover
-              var tooltip = d3.select(container).append("div")
-                  .attr("class", "tooltip")
-                  .style("opacity", 0);
+              // var tooltip = d3.select(container).append("div")
+                  // .attr("class", "tooltip")
+                  // .style("opacity", 0);
 
-              // tooltip mouseover event handler
-              var tipMouseover = function(d) {
-                  var color = colorScale(d.start);
-                  var html  = d.id + "<br/>" +
-                              "<span style='color:" + color + ";'>Start: " + d.start + "</span><br/>" +
-                              "<b>" + d.soc + "</b> SoC, <b/>" + d.temp + "</b> C";
+              // var tipMouseover = function(d) {
+                  // var color = colorScale(d.start);
+                  // var html  = d.id + "<br/>" +
+                              // "<span style='color:" + color + ";'>Start: " + d.start + "</span><br/>" +
+                              // "<b>" + d.soc + "</b> SoC, <b/>" + d.temp + "</b> C";
 
-                  tooltip.html(html)
-                      .style("left", (d3.event.pageX + 15) + "px")
-                      .style("top", (d3.event.pageY - 28) + "px")
-                    .transition()
-                      .duration(200) // ms
-                      .style("opacity", .9) // started as 0!
+                  // tooltip.html(html)
+                      // .style("left", (d3.event.clientX-800) + "px")
+                      // .style("top", (d3.event.clientY-200) + "px")
+                    // .transition()
+                      // .duration(200) // ms
+                      // .style("opacity", .9) // started as 0!
 
-              };
-              // tooltip mouseout event handler
-              var tipMouseout = function(d) {
-                  tooltip.transition()
-                      .duration(300) // ms
-                      .style("opacity", 0); // don't care about position!
-              };
+              // };
+              // // tooltip mouseout event handler
+              // var tipMouseout = function(d) {
+                  // tooltip.transition()
+                      // .duration(300) // ms
+                      // .style("opacity", 0); // don't care about position!
+              // };
 
               // Add data points!
               canvas.selectAll(".dot")
@@ -110,6 +131,53 @@ d3.csv('data/evaluation_set.csv', function loadCallback(error, data) {
                 .attr("cx", function(d) { return xScale( d.soc ); })     // x position
                 .attr("cy", function(d) { return yScale( d.temp ); })  // y position
                 .style("fill", function(d) { return colorScale(d.start); })
-                .on("mouseover", tipMouseover)
-                .on("mouseout", tipMouseout);
+                // .on("mouseover", tipMouseover)
+                // .on("mouseout", tipMouseout);
           };
+          
+          var svg = dimple.newSvg("#scatterContainer", 590, 400);
+      d3.csv("data/dataset.csv", function (data) {console.log(data);
+        var myChart = new dimple.chart(svg, data);
+        myChart.setBounds(60, 30, 500, 330)
+        myChart.addMeasureAxis("x", "soc");
+        myChart.addMeasureAxis("y", "temp");
+        myChart.addSeries(["id","start"], dimple.plot.bubble);
+        myChart.addLegend(200, 10, 360, 20, "right");
+        myChart.draw();
+      });
+      
+
+      var svg7 = dimple.newSvg("#piechart", 590, 400);
+      piedata=[{Dataset:'Test dataset', Amount: 250},{Dataset:'Training dataset', Amount: 750}]
+
+      var myChart = new dimple.chart(svg7, piedata);
+      myChart.setBounds(10, 10, 230, 180)
+      myChart.addMeasureAxis("p", "Amount");
+      myChart.addSeries("Dataset", dimple.plot.pie);
+      myChart.addLegend(250, 10, 45, 150, "left");
+      myChart.draw();
+
+      
+      
+                var svg10 = dimple.newSvg("#tr-container2", 590, 400);
+      d3.csv("data/train_set.csv", function (data) {console.log(data);
+        var myChart = new dimple.chart(svg10, data);
+        myChart.setBounds(60, 30, 500, 330)
+        myChart.addMeasureAxis("x", "soc");
+        myChart.addMeasureAxis("y", "temp");
+        myChart.addSeries(["id","start"], dimple.plot.bubble);
+        myChart.addLegend(200, 10, 360, 20, "right");
+        myChart.draw();
+      });
+      
+      
+                var svg9 = dimple.newSvg("#ev-container2", 590, 400);
+      d3.csv("data/evaluation_set.csv", function (data) {console.log(data);
+        var myChart = new dimple.chart(svg9, data);
+        myChart.setBounds(60, 30, 500, 330)
+        myChart.addMeasureAxis("x", "soc");
+        myChart.addMeasureAxis("y", "temp");
+        myChart.addSeries(["id","start"], dimple.plot.bubble);
+        myChart.addLegend(200, 10, 360, 20, "right");
+        myChart.draw();
+      });

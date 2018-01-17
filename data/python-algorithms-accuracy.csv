@@ -1,0 +1,8 @@
+algorithm, accuracy
+SVC, 0.9961
+SGDClassifier, 0.872
+DecisionTreeClassifier, 0.994
+RandomForestClassifier, 0.994
+KNeighborsClassifier, 0.996
+GaussianNB, 0.912
+GradientBoostingClassifier, 0.995
